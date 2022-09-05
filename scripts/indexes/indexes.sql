@@ -1,0 +1,1 @@
+--CREATE INDEX wt_objects_house_id_idx ON public.wt_objects (house_id);

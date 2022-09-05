@@ -1,0 +1,12 @@
+CREATE INDEX Договоры_idx ON import.Договоры (ref);
+CREATE INDEX Здания_idx ON import.Здания (ref);
+CREATE INDEX Пломбы_idx ON import.Пломбы (ref);
+CREATE INDEX ПриборыУчета_idx ON import.ПриборыУчета (ref);
+CREATE INDEX ТП_idx ON import.ТП (ref);
+CREATE INDEX ТочкиУчета_idx ON import.ТочкиУчета (ref);
+CREATE INDEX ТочкиУчета_Адрес_idx ON import.ТочкиУчета (Адрес);
+CREATE INDEX ТочкиУчета_ТП_idx ON import.ТочкиУчета (ТП);
+CREATE INDEX Улицы_idx ON import.Улицы (ref);
+CREATE INDEX ФизическиеЛица_idx ON import.ФизическиеЛица (ref);
+CREATE INDEX ЮридическиеЛица_idx ON import.ЮридическиеЛица (ref);
+CREATE INDEX Потребление_pu ON import.Потребление (ПриборУчета);

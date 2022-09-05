@@ -1,0 +1,12 @@
+-- CREATE TABLE public.wt_orders (
+-- 	id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+-- 	order_type_id int NOT NULL,
+--     order_number text NOT NULL,
+--     order_date date NOT NULL,
+--     pu_id bigint NOT NULL,
+--     notes text, 
+-- 	CONSTRAINT wt_acts_pk PRIMARY KEY (id)
+-- );
+
+-- ALTER TABLE public.wt_orders ADD CONSTRAINT wt_orders_id_st_order_types_fkey FOREIGN KEY (order_type_id) REFERENCES st_order_types(id);
+-- ALTER TABLE public.wt_orders ADD CONSTRAINT wt_orders_id_wt_pu_fkey FOREIGN KEY (pu_id) REFERENCES wt_pu(id);

@@ -1,0 +1,7 @@
+import.func_import_xml(ptf text)
+import.func_import_db()
+import.func_import_reg_xml(ptf text)
+import.func_import_links()
+import.func_import_tgu()
+import.func_import_usg_xml(ptf text)
+import.func_import_usg_db()

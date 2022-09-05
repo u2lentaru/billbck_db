@@ -1,0 +1,21 @@
+CREATE OR REPLACE FUNCTION func_obj_lines_upd(x int, o int, ot int, r int, l numeric(10,3), s text, e text) RETURNS int AS
+$$
+DECLARE
+i int :=0;
+BEGIN
+	begin
+        update public.wt_obj_lines set (obj_id, obj_type_id, cable_resistance_id, line_length, startdate, enddate) = 
+        (o, ot, r, l, to_date(s, 'YYYY-mm-dd'), to_date(e, 'YYYY-mm-dd')) where id = x returning id into i;
+	exception 
+		when foreign_key_violation then
+			return 0;
+		when others then
+			return 0;
+	end;
+    if ( i is null )
+	then
+		return 0;
+	end if;
+	return i;
+END
+$$ LANGUAGE 'plpgsql';

@@ -1,0 +1,39 @@
+//tgu-contract
+
+alter table public.wt_obj_contract add column type_id int;
+update public.wt_obj_contract set type_id=0;
+ALTER TABLE public.wt_obj_contract ALTER COLUMN type_id SET NOT NULL;
+DROP view v_obj_contracts CASCADE;
+create or replace view v_obj_contracts as
+CREATE OR REPLACE FUNCTION func_contract_getobject
+CREATE OR REPLACE FUNCTION func_contract_getobject_cnt
+CREATE OR REPLACE FUNCTION func_obj_contract_get
+CREATE OR REPLACE FUNCTION func_obj_contracts_get //type_id param added
+CREATE OR REPLACE FUNCTION func_obj_contracts_cnt //type_id param added
+CREATE OR REPLACE FUNCTION func_object_getcontract //type_id param added
+CREATE OR REPLACE FUNCTION func_object_getcontract_cnt //type_id param added
+CREATE OR REPLACE FUNCTION func_obj_contracts_add //type_id param added
+CREATE OR REPLACE FUNCTION func_obj_contracts_upd //type_id param added
+CREATE OR REPLACE FUNCTION func_objects_get //type_id = 0 added
+CREATE OR REPLACE FUNCTION func_objects_cnt //type_id = 0 added
+
+insert into public.wt_obj_contract (contract_id, obj_id, startdate, enddate, type_id)
+select wtc.contract_id, ot2.tgu_id, wtc.startdate, wtc.enddate, ot2.tgu_type_id 
+from "import".wt_tgu_contract wtc, "import".obj2tgu ot2 
+where wtc.obj_id = ot2.obj_id 
+
+
+SQL Error [2BP01]: ERROR: cannot drop view v_obj_contracts because other objects depend on it
+  Подробности: function func_contract_getobject(integer,boolean) depends on type v_obj_contracts
+function func_obj_contract_get(integer,text) depends on type v_obj_contracts
+function func_obj_contracts_get(integer,integer,integer,integer,boolean,integer,boolean) depends on type v_obj_contracts
+function func_object_getcontract(integer,boolean) depends on type v_obj_contracts
+  Подсказка: Use DROP ... CASCADE to drop the dependent objects too.
+
+//st_sub_details add column
+alter table public.st_sub_details add column job text;
+create or replace view v_sub_detail
+drop FUNCTION func_sub_details_add
+CREATE OR REPLACE FUNCTION func_sub_details_add
+drop FUNCTION func_sub_details_upd
+CREATE OR REPLACE FUNCTION func_sub_details_upd

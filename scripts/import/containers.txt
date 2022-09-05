@@ -1,0 +1,7 @@
+docker exec postgres pg_dump -U postgres -d postgres -c -f full_dump_local_`/bin/date "+%Y%m%d%H%M"`.sql
+docker exec postgres pg_dump -U postgres -d postgres -c -f full_dump_posterc_`/bin/date "+%Y%m%d%H%M"`.sql
+docker run -d --rm -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data -v /home/qazafn/mntdata:/var/lib/postgresql/data -v /home/qazafn/workdir:/workdir -w /workdir postgres:latest
+docker run -d -e DB_HOST="host.docker.internal" -e NOAUTH="TRUE" --rm -p 8080:8080 --name backend_srv u2lru/u2lru
+docker run --rm -d -p 3000:3000/tcp --name frontend orenvov/billing:latest
+docker run -d -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data -v //d/pgdata_new/db1:/var/lib/postgresql/data -v //d/pgdata_new/workdir:/workdir -w /workdir postgres:latest
+docker run -d -p 5432:5432 --name postgres135 -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data -v //d/pgdata135/db1:/var/lib/postgresql/data -v //d/pgdata135/workdir:/workdir -w /workdir e01c76bb1351

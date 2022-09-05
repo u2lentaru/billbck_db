@@ -1,0 +1,25 @@
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=q02asZiX" -p 1433:1433 -v //d/mssqldata/data:/var/opt/mssql/data -v //d/mssqldata/log:/var/opt/mssql/log -v //d/mssqldata/secrets:/var/opt/mssql/secrets --name sql1 -d mcr.microsoft.com/mssql/server:2017-latest
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P q02asZiX
+Parameters (WITH REPLACE) (WITH RESTRICTED USER)? OFFLINE (Tasks->Disconnect)
+
+_Chrc184 - acc descr?
+_Acc*
+_Const*
+_Reference*
+
+_Reference46 - GRP
+_Reference116 - Objects
+_Reference117 - TP
+
+_Reference48 - PU
+
+_Reference25 - Contacts
+_Reference14 - Contracts
+_Reference19 - Houses
+
+_Reference23 - Descriptions
+
+_Reference122 - Phys
+_Reference126 - Subjects
+_Reference120 - Streets
+_Reference44 - Seals

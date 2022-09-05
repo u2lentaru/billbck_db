@@ -1,0 +1,17 @@
+-- CREATE TABLE public.wt_usages (
+--     id int NOT NULL GENERATED ALWAYS AS IDENTITY,
+--     usage_date date NOT NULL, --???
+--     --contract_id bigint NOT NULL,
+--     obj_id int NOT NULL,
+--     pu_id int NOT NULL,
+--     qty numeric(10,1) NOT NULL,
+--     startdate date NOT NULL,
+--     enddate date NOT NULL,
+--     trans_loss numeric(10,1) NOT NULL,
+--     line_loss numeric(10,1) NOT NULL,
+--     CONSTRAINT wt_usages_pk PRIMARY KEY (id)
+-- );
+
+-- ALTER TABLE public.wt_usages ADD CONSTRAINT wt_usages_enddate_check CHECK (enddate >= startdate);
+-- ALTER TABLE public.wt_usages ADD CONSTRAINT wt_usages_id_wt_objects_fkey FOREIGN KEY (obj_id) REFERENCES wt_objects(id);
+-- ALTER TABLE public.wt_usages ADD CONSTRAINT wt_usages_id_wt_pu_fkey FOREIGN KEY (pu_id) REFERENCES wt_pu(id);

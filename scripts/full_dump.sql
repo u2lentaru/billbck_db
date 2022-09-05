@@ -1,0 +1,1 @@
+pg_dump -U postgres -d postgres -c -n public -f 20210528.sql

@@ -1,0 +1,2 @@
+docker exec postgres pg_dump -U postgres -d postgres -c -f full_dump_local_`/bin/date "+%Y%m%d%H%M"`.sql
+docker exec postgres pg_dump -U postgres -d postgres -c -f full_dump_posterc_`/bin/date "+%Y%m%d%H%M"`.sql

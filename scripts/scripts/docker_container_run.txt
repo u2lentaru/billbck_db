@@ -1,0 +1,3 @@
+docker run -d --rm -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data -v /home/qazafn/mntdata:/var/lib/postgresql/data -v /home/qazafn/workdir:/workdir -w /workdir postgres:latest
+docker run -d -e DB_HOST="host.docker.internal" -e NOAUTH="TRUE" --rm -p 8080:8080 --name backend_srv u2lru/u2lru
+docker run --rm -d -p 3000:3000/tcp orenvov/billing:latest
